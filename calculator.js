@@ -1,16 +1,19 @@
 const display = document.querySelector(".display");
 const operands = document.querySelectorAll(".operand");
 const operators = document.querySelectorAll(".operator");
+const editors = document.querySelectorAll(".editor");
 
-operands.forEach(operand => operand.addEventListener("click", updateDisplay));
-operators.forEach(operand => operand.addEventListener("click", updateDisplay));
+operands.forEach(operand => operand.addEventListener("click", handleOperand));
+operators.forEach(operand => operand.addEventListener("click", handleOperator));
+editors.forEach(editor => editor.addEventListener("click", handleEditor));
 
-let displayVal = "";
-let num1 = 0;
-let num2 = 0;
-let operator = "";
-let operating = false;
-let expression = [];
+const calculator = {
+    displayValue: "0",
+    operand1: null,
+    operand2: null,
+    operating: false,
+    operator: null,
+}
 
 function add(a, b) {
     return a + b;
@@ -41,13 +44,22 @@ function sqrt(a) {
 };
 
 function clear() {
-    let displayVal = "";
-    let num1 = 0;
-    let num2 = 0;
-    let operator = "";
-    let operating = false;
-    let expression = [];
+    calculator.displayValue = "0";
+    calculator.operand1 = null;
+    calculator.operand2 = null;
+    calculator.operating = false;
+    calculator.operator = null;
+    updateDisplay();
 };
+
+function clearEntry() {
+
+}
+
+function updateDisplay() {
+    display.textContent = calculator.displayValue;
+}
+
 
 function operate(operator, a, b) {
     a = parseInt(a);
@@ -69,15 +81,25 @@ function operate(operator, a, b) {
         default:
             break;                   
     }
+    return result;
 };
 
 function erase() {
-    displayVal = displayVal.split(0, -1);
-    if (displayVal === "") {
-        display.textContent = "0";
-    }
-    else {
-        display.textContent = displayVal;
+    calculator.displayValue = calculator.displayValue.slice(0, -1);
+    display.textContent = (calculator.displayValue === "") ? "0" : calculator.displayValue;
+};
+
+function handleEditor() {
+    switch (this.id) {
+        case "C":
+            clear();
+            break;
+        case "CE":
+            clearEntry();
+            break;
+        case "E":
+            erase();
+            break;         
     }
 };
 
