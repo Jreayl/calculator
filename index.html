@@ -1,42 +1,40 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Calculator</title>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="calculator.js" defer></script>
+    <title>Calculator</title>
 </head>
 <body>
     <main class="calculator">
         <div class="container">
-            <div class="display-container">
-                <div class="display" data-display="">0</div>
+            <div class="display">
+                <div data-display class="data-display"></div>
             </div>
-            <div class="grid-container">
-                <button class="operator" id="%">%</button>
-                <button class="editor" id="CE">CE</button>
-                <button class="editor" id="C">C</button>
-                <button class="editor" id="E">E</button>
-                <button class="operator" id="1/x">1/x</button>
-                <button class="operator" id="x^2">x^2</button>
-                <button class="operator" id="sqrt">sqrt(x)</button>
-                <button class="operator" id="/">/</button>
-                <button class="operand" id="7">7</button>
-                <button class="operand" id="8">8</button>
-                <button class="operand" id="9">9</button>
-                <button class="operator" id="x">x</button>
-                <button class="operand" id="4">4</button>
-                <button class="operand" id="5">5</button>
-                <button class="operand" id="6">6</button>
-                <button class="operator" id="-">-</button>
-                <button class="operand" id="1">1</button>
-                <button class="operand" id="2">2</button>
-                <button class="operand" id="3">3</button>
-                <button class="operator" id="+">+</button>
-                <button class="operand" id="+/-">+/-</button>
-                <button class="operand" id="0">0</button>
-                <button class="operand" id=".">.</button>
-                <button class="operator" id="=">=</button>
-            </div>
+            <button data-clear class="data-clear">AC</button>
+            <button data-delete class="data-delete">DEL</button>
+            <button data-operation class="data-operation">^</button>
+            <button data-operation class="data-operation">/</button>
+            <button data-operand class="data-operand">7</button>
+            <button data-operand class="data-operand">8</button>
+            <button data-operand class="data-operand">9</button>
+            <button data-operation class="data-operation">*</button>
+            <button data-operand class="data-operand">4</button>
+            <button data-operand class="data-operand">5</button>
+            <button data-operand class="data-operand">6</button>
+            <button data-operation class="data-operation">-</button>
+            <button data-operand class="data-operand">1</button>
+            <button data-operand class="data-operand">2</button>
+            <button data-operand class="data-operand">3</button>
+            <button data-operation class="data-operation">+</button>
+            <button data-negate class="data-negate">+/-</button>
+            <button data-operand class="data-operand">.</button>
+            <button data-operand class="data-operand">0</button>
+            <button data-equals class="data-equals">=</button>
         </div>
     </main>
 </body>
-<script src="calculator.js"></script>
+</html>
