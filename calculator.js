@@ -21,6 +21,8 @@ negateBtn.addEventListener('click', negate);
 window.addEventListener('keydown', keyInput);
 
 const keyOperators = ['+', '-', '*', '/', '^'];
+const MAX_VALUE = 999999999999;
+const MIN_VALUE = -99999999999;
 
 let prevOperand = '';
 let currOperand = '';
@@ -84,8 +86,12 @@ function calculate() {
     if (currOperand === '' && prevOperand === '') return;
     if (prevOperand !== '' && currOperand !== '') {
         currOperand = operate(currOperation, prevOperand, currOperand); // 1 + 1 + => 2 or 1 + 1 = => 2
-    } else {
+    } 
+    else if (prevOperand !== '' && currOperand === '') {
         currOperand = operate(currOperation, prevOperand, prevOperand); // 1 + + => 2
+    }
+    else {
+        prevOperand = currOperand;
     }
     currOperation = undefined;
     updateDisplay();
@@ -138,7 +144,7 @@ function setOperation(operation) {
 function formatLargeNum(number) {
     result = Number(number);
     if (result.toString().includes('.')) result = Math.round(Number(result));
-    else result = result.toExponential(2);
+    else if (result >= MAX_VALUE || result <= MIN_VALUE) result = result.toExponential(2);
     return result;
 }
 
