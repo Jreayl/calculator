@@ -1,124 +1,92 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-    font-family: Gotham Rounded, sans-serif;
-    font-weight: normal;
+* {
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    /* linear gradient */
-    background: black;
+    background: rgb(30, 30, 30);
     padding: 0;
     margin: 0;
 }
 
-.calculator {
+main {
     display: flex;
     justify-content: center;
-    align-items: center;
     align-content: center;
+    align-items: center;
     min-height: 100vh;
 }
 
-.container {
-    background: gray;
+.grid-container {
+    background-color: gray;
     display: grid;
+    padding: 20px;
     justify-content: center;
     align-content: center;
-    grid-template-columns: repeat(4, 80px);
-    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
-    padding: 20px;
     border-radius: 10px;
     gap: 10px;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
 }
 
-.container button {
+.grid-container button {
     cursor: pointer;
     font-size: 2rem;
     border: none;
-    outline: none;
     border-radius: 10%;
-    background: rgba(77, 77, 77, .75);
-    color: rgba(255, 255, 255, .75);
+    outline: none;
+    background: rgba(77, 77, 77, 0.75);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.grid-container button:hover {
+    background: rgba(100, 100, 100, 0.75);
 }
 
 .display {
     grid-column: 1 / -1;
-    background: rgba(77, 77, 77, .75);
-    border: solid 1px rgba(116, 116, 116, .75);
+    background: rgba(77, 77, 77, 0.75);
+    border: solid 1px rgba(116, 116, 116, 0.75);
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-around;
     padding: 10px;
-    word-wrap: break-word;
-    word-break: break-all;
+    margin-bottom: 10px;
 }
 
-.data-display {
-    color: rgba(255, 255, 255, .75);
-    font-size: 3rem;
+.display-val {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 3em;
 }
 
-.container .data-operand:hover {
-    background-color: rgb(59, 59, 59);
+.grid-container .data-operator {
+    color: rgba(31, 240, 0, .75);
 }
 
-.container .data-negate:hover {
-    background-color: rgba(59, 59, 59, 1);
+.grid-container .data-operator:focus, .grid-container .data-number:focus {
+    background-color: rgba(46, 46, 46, 0.75);
 }
 
-.container .data-negate:focus {
-    background-color: rgba(59, 59, 59, 1);
+.grid-container .data-equals {
+    background: rgba(31, 240, 0, .75);
 }
 
-.container .data-operand:focus {
-    background-color: rgb(59, 59, 59);
+.grid-container .data-equals:hover {
+    background: rgba(31, 189, 0, 0.75);
 }
 
-.container .data-operation {
-    color: rgba(31, 189, 0, .75);
+.grid-container .data-equals:focus {
+    background: rgba(18, 133, 0, 0.75);
 }
 
-.container .data-operation:hover {
-    background-color: rgb(59, 59, 59, 1);
+.grid-container .data-clear, .grid-container .data-delete {
+    background-color: rgb(240, 31, .75);
 }
 
-.container .data-operation:focus {
-    background-color: rgba(59, 59, 59, 1);
+.grid-container .data-delete:hover, .grid-container .data-clear:hover {
+    background-color: rgba(201, 27, 0, 0.75);
 }
 
-.container .data-equals {
-    background-color: rgba(31, 189, 0, .75);
-}
-
-.container .data-equals:hover {
-    background-color: rgba(31, 240, 0, .75);
-}
-
-.container .data-equals:focus {
-    background-color: rgba(31, 240, 0, .75);
-}
-
-.container .data-clear {
-    background-color: rgba(189, 21, 0, .75);
-}
-
-.container .data-clear:hover {
-    background-color: rgba(240, 31, 0, .75);
-}
-
-.container .data-clear:focus {
-    background-color: rgba(240, 31, 0, .75);
-}
-
-.container .data-delete {
-    background-color: rgba(189, 21, 0, .75);
-}
-
-.container .data-delete:hover {
-    background-color: rgba(240, 31, 0, .75);
-}
-
-.container .data-delete:focus {
-    background-color: rgba(240, 31, 0, .75);
+.grid-container .data-delete:focus, .grid-container .data-clear:focus {
+    background-color: rgba(112, 19, 0, 0.75);
 }

@@ -1,40 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="calculator.js" defer></script>
     <title>Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="calculator.js" defer></script>
 </head>
 <body>
     <main class="calculator">
-        <div class="container">
+        <div class="grid-container">
             <div class="display">
-                <div data-display class="data-display"></div>
+                <div data-display class="display-val"></div>
             </div>
             <button data-clear class="data-clear">AC</button>
             <button data-delete class="data-delete">DEL</button>
-            <button data-operation class="data-operation">^</button>
-            <button data-operation class="data-operation">/</button>
-            <button data-operand class="data-operand">7</button>
-            <button data-operand class="data-operand">8</button>
-            <button data-operand class="data-operand">9</button>
-            <button data-operation class="data-operation">*</button>
-            <button data-operand class="data-operand">4</button>
-            <button data-operand class="data-operand">5</button>
-            <button data-operand class="data-operand">6</button>
-            <button data-operation class="data-operation">-</button>
-            <button data-operand class="data-operand">1</button>
-            <button data-operand class="data-operand">2</button>
-            <button data-operand class="data-operand">3</button>
-            <button data-operation class="data-operation">+</button>
+            <button data-operator class="data-operator">^</button>
+            <button data-operator class="data-operator">÷</button>
+            <button data-number class="data-number">7</button>
+            <button data-number class="data-number">8</button>
+            <button data-number class="data-number">9</button>
+            <button data-operator class="data-operator">×</button>
+            <button data-number class="data-number">4</button>
+            <button data-number class="data-number">5</button>
+            <button data-number class="data-number">6</button>
+            <button data-operator class="data-operator">-</button>
+            <button data-number class="data-number">1</button>
+            <button data-number class="data-number">2</button>
+            <button data-number class="data-number">3</button>
+            <button data-operator class="data-operator">+</button>
             <button data-negate class="data-negate">+/-</button>
-            <button data-operand class="data-operand">.</button>
-            <button data-operand class="data-operand">0</button>
+            <button data-number class="data-number">0</button>
+            <button data-number class="data-number">.</button>
             <button data-equals class="data-equals">=</button>
         </div>
     </main>
 </body>
-</html>
