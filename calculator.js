@@ -144,7 +144,7 @@ function setOperation(operation) {
 function formatLargeNum(number) {
     result = Number(number);
     if (result.toString().includes('.')) result = Math.round(Number(result));
-    else if (result >= MAX_VALUE || result <= MIN_VALUE) result = result.toExponential(2);
+    if (result >= MAX_VALUE || result <= MIN_VALUE) result = result.toExponential(2);
     return result;
 }
 
